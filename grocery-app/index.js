@@ -50,13 +50,17 @@
  app.post("/list", function(req, res) {
      console.log("POST /list");
      let input = req.body;
-     // insert the item in json format
+
+     console.log("New Item: ", newItem);
+
+     // add the new item in json format
      // ??? Not sure about this ???
-     list.push(input.json());
-     // send a status code showing that POST was successful
-     res.sendStatus(202);
- 
- })
+     list.push(newItem);
+
+     // respond back with the item we added in json format
+     // ?? Not sure about this ??
+     res.json(newItem);
+ });
  
  
  /**
